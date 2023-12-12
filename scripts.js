@@ -3,7 +3,9 @@ const searchButton = document.querySelector(".search-btn");
 const locationButton = document.querySelector(".location-btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
+
 const API_KEY = "5273ce3495381b23ff735e4cfd482dd9";
+
 const createWeatherCard = (cityName, weatherItem, index) => {
     if (index === 0) {
         return `<div class="details">
@@ -54,6 +56,8 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
         alert("An error occurred while fetching the weather forecast!");
     });
 }
+
+
 const getCityCoordinates = () => {
     const cityName = cityInput.value.trim();
     if (cityName === "") return;
@@ -92,3 +96,9 @@ const getUserCoordinates = () => {
 locationButton.addEventListener("click", getUserCoordinates);
 searchButton.addEventListener("click", getCityCoordinates);
 cityInput.addEventListener("keyup", e => e.key === "Enter" && getCityCoordinates());
+
+
+const date = new Date(); {
+const formattedDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+console.log(formattedDate);
+}
